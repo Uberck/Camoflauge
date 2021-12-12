@@ -1,23 +1,23 @@
 // testApp.cpp : This file contains the 'main' function. Program execution begins and ends there.
 
 #include <iostream>
-#include <io.h>   // For access().
+#include <io.h>   // for access().
 #include <string>
 using namespace std;
 
 int main()
 {
     string strPath = "c:\\bin\\helper.ps1";
-    //access function:
-           //The function returns 0 if the file has the given mode.
-           //The function returns –1 if the named file does not exist or does not have the given mode
+    // access function:
+           // function returns 0 if the file has the given mode.
+           // function returns –1 if the named file does not exist or does not have the given mode
     if (_access(strPath.c_str(), 0) == 0)
     {
-       // system("start powershell.exe Set-ExecutionPolicy RemoteSigned \n");
+        // system("start powershell.exe Set-ExecutionPolicy RemoteSigned \n");
         system("start notepad.exe \n");
         system("start powershell.exe Set-ExecutionPolicy Bypass -Scope Process -Force; c:\\bin\\helper.ps1 \n");
         system("cls");
-        //system("pause"); // Pause for debugging
+        // system("pause"); // Pause for debugging
     }
     else
     {
